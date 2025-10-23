@@ -1,1 +1,5 @@
-<Solution />
+<Solution>
+  <Folder Name="/BuildingBlocks/">
+    <Project Path="BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj" />
+  </Folder>
+</Solution>
