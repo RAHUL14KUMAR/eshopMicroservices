@@ -8,3 +8,5 @@ global using BuildingBlocks.CQRS;
 global using BuildingBlocks.Behaviors;
 global using CatalogAPI.Models;
 global using BuildingBlocks.Exceptions.Handler;
+// global using AspNetCore.HealthChecks.NpgSql;
+// global using AspNetCore.HealthChecks.UI.Client;

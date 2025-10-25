@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <!-- <PackageReference Include="MediatR" Version="13.0.0" /> -->
+     <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
+     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
      <PackageReference Include="Carter" Version="8.2.0" />    
       <PackageReference Include="Marten" Version="8.13.2" /> 
   </ItemGroup>

@@ -1,4 +1,7 @@
 using CatalogAPI.Data;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var assembly=typeof(Program).Assembly;
@@ -25,6 +28,10 @@ if (builder.Environment.IsDevelopment())
 
 // we basically add our custom exception handler
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
+// add health check service 
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
 var app = builder.Build();
 
 app.MapCarter();
@@ -32,5 +39,11 @@ app.MapCarter();
 // we configure our application according to the global exception handling
 app.UseExceptionHandler(options => { });
 // {}->menas we rely on custom exception handler to handle all the exceptions
+
+app.UseHealthChecks("/health",
+    new HealthCheckOptions
+    {
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
 
 app.Run();
