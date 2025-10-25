@@ -19,8 +19,14 @@ builder.Services.AddMarten(opts =>
     opts.Connection(builder.Configuration.GetConnectionString("Database")!);
 }).UseLightweightSessions();
 
+// we basically add our custom exception handler
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 var app = builder.Build();
 
 app.MapCarter();
+
+// we configure our application according to the global exception handling
+app.UseExceptionHandler(options => { });
+// {}->menas we rely on custom exception handler to handle all the exceptions
 
 app.Run();

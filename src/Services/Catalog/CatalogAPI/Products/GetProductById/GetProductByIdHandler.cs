@@ -1,5 +1,7 @@
 
 
+using System.Runtime.InteropServices;
+
 namespace CatalogAPI.Products.GetProductById;
 
 public record GetProductByIdQuery(Guid Id): IQuery<GetProductByIdResult>;
@@ -16,7 +18,7 @@ internal class GetProductsByIdQueryHandler(IDocumentSession session,ILogger<GetP
 
         if (product is null)
         {
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException(query.Id);
         }
 
         return new GetProductByIdResult(product);

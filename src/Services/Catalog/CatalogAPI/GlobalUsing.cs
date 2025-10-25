@@ -7,3 +7,4 @@ global using CatalogAPI.Exceptions;
 global using BuildingBlocks.CQRS;
 global using BuildingBlocks.Behaviors;
 global using CatalogAPI.Models;
+global using BuildingBlocks.Exceptions.Handler;

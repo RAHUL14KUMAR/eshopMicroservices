@@ -29,7 +29,7 @@ internal class UpdateProductCommandHandler(IDocumentSession session) : ICommandH
         var product = await session.LoadAsync<Product>(cmd.Id, token);
         if (product is null)
         {
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException(cmd.Id);
         }
 
         product.Name = cmd.Name;
