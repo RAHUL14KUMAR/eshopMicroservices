@@ -1,2 +1,6 @@
 ## pagination documentation  support by marten
 ## https://martendb.io/documents/querying/linq/paging
+
+
+## redis cache documentation
+https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-9.0
