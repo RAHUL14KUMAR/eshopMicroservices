@@ -1,5 +1,7 @@
 using Basket.API.Data;
 using BasketAPI.Data;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Scrutor;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,5 +34,11 @@ builder.Services.AddStackExchangeRedisCache(options =>
 var app = builder.Build();
 
 app.MapCarter();
+
+app.UseHealthChecks("/health",
+    new HealthCheckOptions
+    {
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
 
 app.Run();
