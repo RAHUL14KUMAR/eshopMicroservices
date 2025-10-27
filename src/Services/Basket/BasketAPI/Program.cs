@@ -30,6 +30,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.Configuration = builder.Configuration.GetConnectionString("Redis");
     //options.InstanceName = "Basket";
 });
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
