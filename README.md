@@ -7,3 +7,7 @@ https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed?vi
 
 ## grpc documentaion
 https://projects.100xdevs.com/tracks/grpc/grpc-7
+
+
+in this project ## grpc client (BASKET) 
+and ## grpc server (DISCOUNT)
