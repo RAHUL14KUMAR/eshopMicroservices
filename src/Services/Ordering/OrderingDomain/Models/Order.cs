@@ -1,4 +1,5 @@
 using System.Net.Sockets;
+using Ordering.Domain.Events;
 namespace OrderingDomain.Models;
 
 public class Order : Aggregate<OrderId>
