@@ -8,7 +8,7 @@ public record OrderItemId
         ArgumentNullException.ThrowIfNull(value);
         if (value == Guid.Empty)
         {
-            // throw new DomainException("OrderItemId cannot be empty.");
+            throw new DomainException("OrderItemId cannot be empty.");
         }
 
         return new OrderItemId(value);
