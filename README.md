@@ -13,3 +13,7 @@ in this project
 ## grpc client (BASKET) 
 and 
 ## grpc server (DISCOUNT)
+
+
+## yarp documentation
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/getting-started?view=aspnetcore-9.0
